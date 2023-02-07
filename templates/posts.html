@@ -1,0 +1,53 @@
+{% extends 'base.html'%} {% block head %}
+<title>Edit Posts</title>
+{% endblock %} {% block body %}
+<div style="display: grid; place-items: center"><h2>Tech Blogs</h2></div>
+<form action="/posts" method="post">
+  <div style="display: grid; place-items: center"><h5>Title</h5></div>
+  <input
+    class="form-control"
+    type="text"
+    placeholder="enter title"
+    aria-label="Search"
+    name="title"
+  />
+  <br />
+  <div style="display: grid; place-items: center"><h5>Author</h5></div>
+  <input
+    class="form-control"
+    type="text"
+    placeholder="enter author"
+    aria-label="Search"
+    name="author"
+  />
+  <br />
+  <div style="display: grid; place-items: center"><h5>Content</h5></div>
+  <textarea
+    class="form-control"
+    placeholder="Content"
+    name="content"
+    rows="3"
+  ></textarea>
+
+  <br />
+  <div style="display: grid; place-items: center">
+    <input type="submit" value="Post" class="btn btn-primary" />
+  </div>
+</form>
+<hr />
+{% for post in posts %}
+<p style="font-weight: bold; display: grid; place-items: center;margin-bottom: 0px;">
+  {{post.title}}
+</p>
+<br />
+<p style="white-space: pre-wrap; margin-bottom: 0px;margin-top: 0px;">{{post.content}}</p>
+<p>Written by: {{post.author}} on {{post.dateposted}}</p>
+<br />
+<a  href="/posts/delete/{{post.id}}"
+  ><button class="btn btn-danger">Del</button></a
+>
+<a  href="/posts/edit/{{post.id}}"
+  ><button class="btn btn-primary">Edit</button></a
+>
+
+{%endfor%} {% endblock %}

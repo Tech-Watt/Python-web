@@ -1,0 +1,35 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+   
+}
+
+.heading{
+    display: grid;
+    place-items: center;
+    color: black;
+    font-size: small;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.formdiv{
+    display: grid;
+    place-items: center;
+    
+}
+
+.contentdiv{
+    display: grid;
+    place-items: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+.contenthead{
+    display: grid;
+    place-items: center;
+}
+.files{
+    display: grid;
+    place-items: center;
+    border-radius: 3px;
+}

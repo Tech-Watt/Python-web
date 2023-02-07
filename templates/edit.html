@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+
+{% block head %}
+<title>Edit Post</title>
+{% endblock %}
+
+{% block body %}
+<div style="display: grid;place-items: center;"><h2>EDIT BLOG POSTS</h2></div>
+
+<form action="/posts/edit/{{posts.id}}" method="POST">
+    <div style="display: grid;place-items: center;"><h5>Title</h5></div>
+    <input class="form-control"type="text" value="{{posts.title}}"aria-label="Search" name="title" />
+    <br>
+    <div style="display: grid;place-items: center;"><h5>Author</h5></div>
+    <input class="form-control"type="text"  value="{{posts.author}}"aria-label="Search" name="author" />
+    <br>
+    <div style="display: grid;place-items: center;"><h5>Content</h5></div>
+    <textarea class="form-control" type="text"   name="content"  rows="3">{{posts.content}}</textarea>
+   
+    <br>
+    <div style="display: grid;place-items: center;"><input type="submit" value="Save" class="btn btn-primary"></div>
+
+</form>
+
+{% endblock %}
